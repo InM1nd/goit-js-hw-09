@@ -1,22 +1,17 @@
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
-const refs = {
-  delay: document.querySelector('input[name="delay"]'),
-  step: document.querySelector('input[name="step"]'),
-  amount: document.querySelector('input[name="amount"]'),
-  form: document.querySelector('.form'),
-};
+const form = document.querySelector('.form');
 
-refs.form.addEventListener('submit', clickSubmitBtn);
+form.addEventListener('submit', clickSubmitBtn);
+
 
 function clickSubmitBtn(evt) {
   evt.preventDefault();
   
-
   const data = {
-    delay: parseInt(refs.delay.value),
-    step: parseInt(refs.step.value),
-    amount: parseInt(refs.amount.value),
+    delay: parseInt(form.delay.value),
+    step: parseInt(form.step.value),
+    amount: parseInt(form.amount.value),
   };
   callPromise(data);
   evt.currentTarget.reset();
